@@ -12,10 +12,11 @@ import org.samcrow.colonydata.Colony;
 
 /**
  * A base class for an experiment result
+ * @param <E> The type of experiment that this is a result of
  * @author samcrow
  */
 @Entity
-public abstract class ExperimentResult implements Serializable {
+public abstract class ExperimentResult<E extends Experiment> implements Serializable {
 
     protected static final long serialVersionUID = 1;
 
@@ -24,6 +25,11 @@ public abstract class ExperimentResult implements Serializable {
      * The colony that this result concerns
      */
     protected Colony colony;
+    
+    /**
+     * The experiment that produced this result
+     */
+    protected E experiment;
 
     protected int id;
 
@@ -37,7 +43,18 @@ public abstract class ExperimentResult implements Serializable {
     public Colony getColony() {
         return colony;
     }
+    
+    @ManyToOne(targetEntity = Experiment.class)
+    @JoinColumn(name = "experiment_fk")
+    public E getExperiment() {
+        return experiment;
+    }
 
+    public void setExperiment(E experiment) {
+        this.experiment = experiment;
+    }
+    
+    
     @Id
     @GeneratedValue(generator = "increment")
     @GenericGenerator(name = "increment", strategy = "increment")
@@ -61,5 +78,4 @@ public abstract class ExperimentResult implements Serializable {
     public void setNotes(String notes) {
         this.notes = notes;
     }
-    
 }

@@ -12,16 +12,17 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
-import javax.persistence.Transient;
+import javax.persistence.OneToMany;
 import org.hibernate.annotations.GenericGenerator;
 import org.samcrow.colonydata.Colony;
 
 /**
  * An experiment
+ * @param <T> The type of result that this experiment has
  * @author Sam Crow
  */
 @Entity
-public abstract class Experiment implements Serializable {
+public abstract class Experiment<T extends ExperimentResult> implements Serializable {
     
     private static final long serialVersionUID = 1;
     
@@ -35,6 +36,8 @@ public abstract class Experiment implements Serializable {
      * The colonies on which this experiment was performed
      */
     private List<Colony> coloniesTested = new LinkedList<>();
+    
+    protected List<T> results = new LinkedList<>();
     
 
     @Id
@@ -86,13 +89,17 @@ public abstract class Experiment implements Serializable {
      * 
      * @return The results of this experiment
      */
-    @Transient
-    public abstract List<? extends ExperimentResult> getResults();
+    @OneToMany(mappedBy = "experiment", targetEntity = ExperimentResult.class)
+    public List<T> getResults() {
+        return results;
+    }
     
     /**
      * Sets the results of this experiment
      * @param newResults 
      */
-    public abstract void setResults(List<? extends ExperimentResult> newResults);
+    public void setResults(List<T> newResults) {
+        results = newResults;
+    }
     
 }

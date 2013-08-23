@@ -109,8 +109,8 @@ public class ColonyTest extends TestCase {
         CensusColonyState state = new CensusColonyState(true, false);
         state.setColony(colony);
         colony.getExperimentResults().add(state);
-        census.getCensusResults().add(state);
-        state.setCensus(census);
+        census.getResults().add(state);
+        state.setExperiment(census);
         
         session.beginTransaction();
         session.save(colony);
