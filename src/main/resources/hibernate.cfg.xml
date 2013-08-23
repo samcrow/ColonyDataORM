@@ -17,6 +17,7 @@
     <mapping class="org.samcrow.colonydata.ColonyNote" />
     <mapping class="org.samcrow.colonydata.experiments.Experiment" />
     <mapping class="org.samcrow.colonydata.experiments.Census" />
+    <mapping class="org.samcrow.colonydata.experiments.MarkedAntRecordingExperiment" />
     <mapping class="org.samcrow.colonydata.experiments.ExperimentResult" />
     <mapping class="org.samcrow.colonydata.experiments.CensusColonyState" />
   </session-factory>
