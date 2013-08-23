@@ -15,7 +15,7 @@ import javax.persistence.Transient;
  * @author Sam Crow
  */
 @Entity
-public class Census extends Experiment {
+public class Census extends Experiment <CensusColonyState> {
     
     
     /**
@@ -63,33 +63,5 @@ public class Census extends Experiment {
         GregorianCalendar calendar = new GregorianCalendar();
         calendar.setTime(startDate);
         return calendar.get(GregorianCalendar.YEAR);
-    }
-
-    @OneToMany(mappedBy = "census")
-    public List<CensusColonyState> getCensusResults() {
-        return results;
-    }
-
-    public void setCensusResults(List<CensusColonyState> results) {
-        this.results = results;
-    }
-
-    
-    @Override
-    public void setResults(List<? extends ExperimentResult> newResults) {
-        results.clear();
-        for(ExperimentResult result : newResults) {
-            if(result instanceof CensusColonyState) {
-                results.add((CensusColonyState) result);
-            }
-        }
-    }
-
-    @Transient
-    @Override
-    public List<? extends ExperimentResult> getResults() {
-        return results;
-    }
-    
-    
+    }    
 }

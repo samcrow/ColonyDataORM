@@ -202,7 +202,7 @@ public class Colony implements Serializable {
         if(census == null) {
             return null;
         }
-        for(CensusColonyState state : census.getCensusResults()) {
+        for(CensusColonyState state : census.getResults()) {
             if(state.getColony().equals(this)) {
                 return state;
             }
@@ -223,7 +223,7 @@ public class Colony implements Serializable {
             return null;
         }
         
-        for(CensusColonyState state : census.getCensusResults()) {
+        for(CensusColonyState state : census.getResults()) {
             if(state.getColony().equals(this)) {
                 return state;
             }

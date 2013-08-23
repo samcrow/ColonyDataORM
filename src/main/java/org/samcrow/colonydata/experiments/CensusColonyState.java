@@ -1,15 +1,13 @@
 package org.samcrow.colonydata.experiments;
 
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 
 /**
  * The recorded state of a colony during a certain census
  * @author Sam Crow
  */
 @Entity
-public class CensusColonyState extends ExperimentResult {
+public class CensusColonyState extends ExperimentResult <Census> {
     
     //State parameters
     /**
@@ -21,11 +19,6 @@ public class CensusColonyState extends ExperimentResult {
      * If the colony appears abandoned
      */
     private boolean abandoned = false;
-    
-    /**
-     * The census that this state is part of
-     */
-    private Census census;
 
     public CensusColonyState(boolean active, boolean abandoned) {
         this.active = active;
@@ -52,17 +45,5 @@ public class CensusColonyState extends ExperimentResult {
     public void setAbandoned(boolean abandoned) {
         this.abandoned = abandoned;
     }
-
-    @ManyToOne
-    @JoinColumn(name="census_fk")
-    public Census getCensus() {
-        return census;
-    }
-
-    public void setCensus(Census census) {
-        this.census = census;
-    }
-    
-    
     
 }
