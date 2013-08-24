@@ -1,12 +1,14 @@
 package org.samcrow.colonydata.experiments;
 
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * The recorded state of a colony during a certain census
  * @author Sam Crow
  */
 @Entity
+@XmlRootElement
 public class CensusColonyState extends ExperimentResult <Census> {
     
     //State parameters

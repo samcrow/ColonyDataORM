@@ -13,6 +13,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
+import javax.xml.bind.annotation.XmlRootElement;
 import org.hibernate.annotations.GenericGenerator;
 import org.samcrow.colonydata.Colony;
 
@@ -22,6 +23,7 @@ import org.samcrow.colonydata.Colony;
  * @author Sam Crow
  */
 @Entity
+@XmlRootElement
 public abstract class Experiment<T extends ExperimentResult> implements Serializable {
     
     private static final long serialVersionUID = 1;

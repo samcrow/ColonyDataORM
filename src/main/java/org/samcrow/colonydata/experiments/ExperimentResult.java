@@ -16,7 +16,7 @@ import org.samcrow.colonydata.Colony;
  * @author samcrow
  */
 @Entity
-public abstract class ExperimentResult<E extends Experiment> implements Serializable {
+public class ExperimentResult <E extends Experiment> implements Serializable {
 
     protected static final long serialVersionUID = 1;
 

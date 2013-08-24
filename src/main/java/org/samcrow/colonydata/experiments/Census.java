@@ -8,12 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * A census of colonies
  * @author Sam Crow
  */
 @Entity
+@XmlRootElement
 public class Census extends Experiment <CensusColonyState> {
     
     
@@ -36,6 +38,11 @@ public class Census extends Experiment <CensusColonyState> {
         
     }
 
+    /**
+     * 
+     * @return The date that this census started on. This will only be precise
+     * to within one day.
+     */
     @Temporal(TemporalType.DATE)
     public Date getStartDate() {
         return startDate;

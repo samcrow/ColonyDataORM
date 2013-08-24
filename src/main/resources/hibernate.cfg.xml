@@ -15,10 +15,19 @@
     <mapping class="org.samcrow.colonydata.ColonyID" />
     <mapping class="org.samcrow.colonydata.ColonyPosition" />
     <mapping class="org.samcrow.colonydata.ColonyNote" />
-    <mapping class="org.samcrow.colonydata.experiments.Experiment" />
+    
     <mapping class="org.samcrow.colonydata.experiments.Census" />
-    <mapping class="org.samcrow.colonydata.experiments.MarkedAntRecordingExperiment" />
-    <mapping class="org.samcrow.colonydata.experiments.ExperimentResult" />
     <mapping class="org.samcrow.colonydata.experiments.CensusColonyState" />
+    <mapping class="org.samcrow.colonydata.experiments.Experiment" />
+    <mapping class="org.samcrow.colonydata.experiments.ExperimentResult" />
+    <mapping class="org.samcrow.colonydata.experiments.HumidityDataPoint" />
+    <mapping class="org.samcrow.colonydata.experiments.HumidityRecordingExperiment" />
+    <mapping class="org.samcrow.colonydata.experiments.MarkedAntInOutRecord" />
+    <mapping class="org.samcrow.colonydata.experiments.MarkedAntRecord" />
+    <mapping class="org.samcrow.colonydata.experiments.MarkedAntRecordingExperiment" />
+    <mapping class="org.samcrow.colonydata.experiments.PreciselyTimedExperiment" />
+    <mapping class="org.samcrow.colonydata.experiments.PreciselyTimedExperimentResult" />
+    <mapping class="org.samcrow.colonydata.experiments.TemperatureDataPoint" />
+    <mapping class="org.samcrow.colonydata.experiments.TemperatureRecordingExperiment" />
   </session-factory>
 </hibernate-configuration>

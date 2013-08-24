@@ -10,7 +10,7 @@ import javax.persistence.Enumerated;
  * @author Sam Crow
  */
 @Entity
-public class MarkedAntRecord extends ExperimentResult <MarkedAntRecordingExperiment> {
+public class MarkedAntRecord extends PreciselyTimedExperimentResult <MarkedAntRecordingExperiment> {
 
     private AntColor headColor;
     
